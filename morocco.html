@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>المغرب</title>
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<style>
+body {
+    background: rgb(219, 226, 232);
+    background: linear-gradient(
+        0deg,
+        rgba(219, 226, 232, 1) 0%,
+       #ffff
+    );
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #171a53;
+}
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3em;
+    margin: 2em 1rem;
+    color: #B22222 ;
+   text-align: center;
+}
+@media only screen and (min-width: 35em) {
+    h1 {
+        font-size: 7em;
+        margin: 1em 4rem 0;
+    }
+}
+h2 {
+    border-bottom: 3px solid #b181ff;
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 3em;
+    color: #B22222;
+    text-align: right;
+}
+p {
+    line-height: 1.6em;
+    color: #000000;
+    font-size: larger;
+    text-align: right;
+}
+
+main {
+    margin: 10vh 1em 10vh;
+}
+.main__hero {
+    min-height: 40vh;
+    padding-top: 3em;
+}
+section {
+    position: relative;
+    min-height: 80vh;
+}
+
+.navbar__menu ul {
+    padding-left: 0;
+    margin: 0;
+    text-align: right;
+}
+.navbar__menu li {
+    display: inline-block;
+}
+.navbar__menu .menu__link {
+    display: block;
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+}
+.navbar__menu .menu__link:hover {
+    background: #2E8B57;
+    color: #fff;
+    transition: ease 0.3s all;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2b5c5f; 
+}
+
+@media (max-width: 768px) {
+  #navbar__list {
+    display: none;
+    flex-direction: column;
+    background: #fdfcfc;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  #navbar__list.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.page__header {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+.page__footer {
+    background: #2E8B57;
+    padding: 3em;
+    color: #fff;
+}
+.page__footer p {
+    color: #fff;
+}
+.landing__container {
+    padding: 1em;
+    text-align: left;
+}
+@media only screen and (min-width: 35em) {
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
+section:nth-of-type(even) .landing__container {
+    margin-right: 0;
+    margin-left: auto;
+    text-align: right;
+}
+section:nth-of-type(odd) .landing__container::before {
+    content: '';
+    background: rgba(189, 234, 9, 0.8);
+    background: linear-gradient(
+        0deg,
+        rgba(189, 234, 9, 0.5) 0%,
+        rgba(189, 234, 9, 1) 100%
+    );
+    position: absolute;
+    z-index: -5;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(even) .landing__container::before {
+    content: '';
+    background: rgb(101, 151, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(101, 151, 255, 0.5) 0%,
+        rgba(101, 151, 255, 1) 100%
+    );
+    position: absolute;
+    top: 3em;
+    right: 3em;
+    z-index: -5;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(even) .landing__container::after {
+    content: '';
+    background: rgb(177, 129, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(177, 129, 255, 0.5) 0%,
+        rgba(177, 129, 255, 1) 100%
+    );
+    position: absolute;
+    left: 3em;
+    bottom: -1em;
+    z-index: -5;
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(3n) .landing__container::after {
+    content: '';
+    background: rgb(32, 21, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(32, 21, 255, 0.5) 0%,
+        rgba(32, 21, 255, 1) 100%
+    );
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(3n + 1) .landing__container::after {
+    content: '';
+    background: rgb(10, 197, 161);
+    background: linear-gradient(
+        0deg,
+        rgba(10, 197, 161, 0.5) 0%,
+        rgba(10, 197, 161, 1) 100%
+    );
+    position: absolute;
+    right: 20vw;
+    bottom: -5em;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(5n) .landing__container::after {
+    content: '';
+    background: rgb(177, 129, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(177, 129, 255, 0.5) 0%,
+        rgba(177, 129, 255, 1) 100%
+    );
+    position: absolute;
+    right: 20vw;
+    bottom: -5em;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section.active {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+section.active .landing__container::before {
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+}
+section.active .landing__container::after {
+    opacity: 1;
+    animation: rotate 5s linear 0s infinite forwards reverse;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) translate(-1em) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    }
+}
+#comments {
+    padding: 3em 1em;
+    background-color: #f4f4f9;
+    margin-top: 2em;
+}
+.comments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.comment-list {
+    margin-top: 2em;
+    list-style: none;
+    padding: 0;
+}
+.comment-list .comment {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+}
+.comment-list .comment h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+.comment-list .comment p {
+    color: #555;
+}
+/*  النموذج */
+#comment-form {
+    margin-top: 3em;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+#comment-form .form-group {
+    margin-bottom: 1em;
+    text-align: left;
+}
+#comment-form label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+#comment-form input,
+#comment-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 0.3em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#comment-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#comment-form button:hover {
+    background-color: #45a049;
+}
+
+.error-message{
+    color: red;
+}.section-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+}
+
+section:nth-of-type(odd) .section-content {
+  flex-direction: row-reverse; /* الصورة على اليمين */
+}
+
+section:nth-of-type(even) .section-content {
+  flex-direction: row; /* الصورة على اليسار */
+}
+
+.section-image {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    z-index: 0;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: -1;
+    border-radius: 50%;
+    top: 100%;
+  }
+  .wrapper .icon:hover:after {
+    animation: bg-pos 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1 both;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .wrapper .icon:hover {
+    color: #fff;
+    overflow: unset;
+    transition: color 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: overflow-toggle 0.7s;
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+  
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  .wrapper .facebook::after {
+    background-color: #1877f2;
+  }
+  .wrapper .twitter::after {
+    background-color: #1da1f2;
+  }
+  .wrapper .instagram::after {
+    background-color: #e4405f;
+  }
+  
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+  }
+  
+  @keyframes bg-pos {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  @keyframes overflow-toggle {
+    0% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: visible;
+    }
+  }
+    .section-video {
+  width: 400px;
+  max-width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+</style>
+<body>
+  <header class="page__header">
+   <nav class="navbar__menu">
+  <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+  <ul id="navbar__list"></ul>
+</nav>
+  </header>
+  <main>
+    <header class="main__hero">
+      <h1>المملكة المغربية</h1>
+    </header>
+    <section id="section1" data-nav="Section 1" class="active">
+  <div class="section-content">
+    <img src="image/h-morocco.jpg" alt="الحضارة المصرية" class="section-image">
+    <div class="landing__container">
+
+        <h2>الحضارة و التاريخ</h2>
+        <p>
+            المغرب من أعرق الدول العربية والإسلامية، وتاريخه ممتد من عصور ما قبل التاريخ لحد النهارده. المنطقة
+             اللي بتُعرف حاليًا بالمغرب شهدت وجود حضارات قديمة زي الأمازيغ اللي كانوا السكان الأصليين،
+             وتركوا بصمات كبيرة في الثقافة واللغة والعادات. مع مرور الزمن، دخل الفينيقيون
+             والقرطاجيون للشواطئ المغربية وأسسوا مراكز تجارية على المتوسط والأطلسي، وبعدهم الرومان 
+            اللي تركوا آثار عظيمة زي مدينة وليلي الأثرية، دليل على اندماج المغرب في الحضارة الرومانية.
+        </p>
+        <p>
+          مع مجيء الإسلام في القرن السابع الميلادي،
+           تحول المغرب بسرعة لمركز مهم في العالم الإسلامي. من هناك بدأت دول وممالك إسلامية قوية زي الأدارسة،
+           والمرابطين، والموحدين، اللي وسعوا نفوذهم حتى الأندلس. المغرب لعب دور بارز في نشر الحضارة 
+          الإسلامية في أوروبا عبر الأندلس، وكان مركز للعلم والفكر والفنون. مراكش وفاس مثلًا بقت مدن مزدهرة
+           فيها جامعات ومدارس ومساجد عظيمة زي جامعة القرويين اللي تُعتبر من أقدم الجامعات في العالم.
+        </p>
+        <p>
+          في العصر الحديث، المغرب واجه محاولات استعمار أوروبية انتهت بفرض الحماية الفرنسية
+           والإسبانية في أوائل القرن العشرين. ومع ذلك، ظل الشعب المغربي متمسك بهويته العربية والإسلامية،
+           وقاد حركة وطنية قوية انتهت بالحصول على الاستقلال سنة 1956 تحت قيادة الملك محمد الخامس.
+           النهارده المغرب بيجمع بين عراقة حضارته القديمة وتنوعه الثقافي،
+           وبين حضوره القوي كدولة حديثة بتلعب دور إقليمي مهم.
+        </p>
+    </div>      
+</div>
+    </section>
+    <section id="section2" data-nav="Section 2" class="active">
+  <div class="section-content">
+    <img src="image/m-morocco.jpg" alt="الموقع الجغرافي" class="section-image">
+    <div class="landing__container">
+
+        <h2>موقع الجغرافي </h2>
+        <p>
+          يقع المغرب في أقصى غرب الوطن العربي وشمال قارة إفريقيا،
+           وهو بمثابة بوابة طبيعية بين أوروبا وإفريقيا. يطل من الشمال على البحر الأبيض 
+          المتوسط ومن الغرب على المحيط الأطلسي، مما جعله يمتلك موقعًا بحريًا استراتيجيًا مهمًا عبر التاريخ،
+           سواء للتجارة أو للاتصال الحضاري. ويحده من الشرق الجزائر، بينما يمتد جنوبًا حتى الصحراء الكبرى.
+           هذا الموقع جعل المغرب مركزًا للتبادل التجاري والثقافي بين الشرق والغرب على مر العصور.
+        </p>
+        <p>
+          إضافةً إلى موقعه المتميز، يتميز المغرب بتنوع جغرافي كبير؛ ففيه سواحل طويلة،
+           وسلاسل جبلية مثل الأطلس الكبير والأطلس المتوسط، إلى جانب الصحاري الواسعة في الجنوب. هذا التنوع 
+          الطبيعي ساهم في تنوع أنشطته الاقتصادية ما بين الزراعة والصيد البحري والسياحة، كما منحه مكانة
+           خاصة جعلته نقطة التقاء حضارات وثقافات متعددة، وممرا استراتيجيًا هامًا للتواصل بين القارات.
+        </p>
+    </div>
+      </div>
+    </section>
+    <section id="section3" data-nav="Section 3" class="active">
+  <div class="section-content">
+    <img src="image/s-morocco.jpg" alt="الوضع الاقتصادي والسياسي" class="section-image">
+    <div class="landing__container">
+        <h2>الوضع الاقتصادي و السياسي</h2>
+        <p>
+          المغرب من 
+          الناحية السياسية هو مملكة دستورية، على رأسها الملك الذي يجمع بين دور الرمز الديني والسياسي،
+           حيث يُلقب بـ"أمير المؤمنين". النظام السياسي المغربي حافظ على استقرار نسبي مقارنة بالعديد
+           من دول المنطقة، خاصة بفضل الإصلاحات الدستورية التي جرت سنة 2011 لتعزيز دور البرلمان والحكومة.
+           ومع ذلك، يظل للملك دور محوري في الحياة السياسية، سواء من خلال رسم السياسات الكبرى
+           أو الإشراف على القرارات الاستراتيجية. المغرب أيضًا عضو نشط في المنظمات الدولية والإقليمية،
+           ويلعب دورًا مهمًا في قضايا مثل الهجرة، الأمن، والتعاون الإفريقي
+        </p>
+        <p>
+        اقتصاديًا، المغرب يُعتبر
+         من أبرز اقتصادات شمال إفريقيا، يعتمد على قطاعات متنوعة مثل الزراعة التي تشغل نسبة كبيرة من السكان،
+         والصناعة خاصة الفوسفات الذي يعد المغرب من أكبر مصدرينه في العالم. كما يُعتبر السياحة قطاعًا حيويًا،
+         بفضل مدن تاريخية مثل مراكش وفاس وطنجة، إضافة إلى الطبيعة الساحرة. في السنوات الأخيرة، 
+        ركز المغرب على تطوير البنية التحتية وجذب الاستثمارات الأجنبية، خاصة في مجالات الطاقة المتجددة
+         مثل مشروع الطاقة الشمسية في ورزازات، مما يعكس طموحه للتحول إلى مركز اقتصادي إقليمي.
+        
+        </p>
+    </div>    
+</div>
+    </section>
+<section id="section4" data-nav="Section 4" class="active">
+  <div class="section-content">
+    <img src="image/a-morocco.jpg" alt="المواقع الأثرية في مصر" class="section-image">
+    <div class="landing__container">
+        <h2>المواقع الاثرية</h2>
+        <p>
+          المغرب بلد غني بالمواقع الأثرية اللي بترجع لعهود مختلفة، من عصور
+           ما قبل التاريخ لحد الفترات الإسلامية. من أبرزها مدينة وليلي، وهي موقع روماني قديم بيحتوي على 
+          معابد وأقواس نصر وفسيفساء مدهشة، وبتعكس أهمية المغرب داخل الإمبراطورية الرومانية. كمان فيه
+           مراكش القديمة بأسواقها وأسوارها التاريخية اللي بتشهد على قوة المرابطين والموحدين، ومدينة
+           فاس العتيقة اللي تُعتبر قلب التراث المغربي وموطن لجامعة القرويين، أقدم جامعة في العالم.
+        </p>
+        <p>
+        ومن المواقع
+         البارزة كمان قصبة الوداية في الرباط، اللي بترمز لتاريخ المغرب العسكري والسياسي، وشالة كموقع 
+        أثري يضم آثار رومانية وإسلامية. بالإضافة إلى ذلك، هناك المدن العتيقة المصنفة ضمن التراث العالمي
+         مثل تطوان ومكناس، واللي بتجمع بين العمارة الأندلسية والإسلامية. هذي المواقع مش بس شاهد على
+         تاريخ المغرب المتنوع، لكنها كمان عامل جذب سياحي عالمي، بيدمج بين أصالة الماضي وحيوية الحاضر.          
+        </p>
+    </div>
+      </div>
+    </section>
+     
+<section id="section5" data-nav="Section 5" class="active">
+  <div class="section-content">
+     <iframe class="section-video" 
+          src="https://www.youtube.com/embed/rjopdq91iOs?si=OphIt1DDMq46Tl7g" 
+          title="فيديو"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+    </iframe>
+    <div class="landing__container">
+        <h2>التراث</h2>
+        <p>
+        المغرب غني بتراثه المتنوع، ومن أبرز عاداته 
+        القديمة الحمّامات التقليدية التي كانت مكانًا للنظافة واللقاء الاجتماعي منذ قرون طويلة. كما اشتهرت عادة
+         صناعة الزليج والخزف الأندلسي الذي يعكس مهارة الحرفيين المغاربة منذ العصور الوسطى. ومن التقاليد القديمة
+         أيضًا ارتداء "القفطان" المغربي في المناسبات، وهو زي موروث حافظ على مكانته كرمز للأصالة والجمال المغربي.
+        </p>
+        <p>
+          ما زال المغاربة
+           يحافظون على عادة شرب الشاي بالنعناع، الذي يُعد بطقوس خاصة ويُقدم للضيوف كرمز للترحاب. كما تستمر عادة
+           "المواسم" التي تجمع بين الطابع الديني والاجتماعي والاحتفالات الشعبية. ومن العادات المتوارثة أيضًا فنون
+           الموسيقى الأندلسية وفن كناوة، التي لا تزال تعكس تنوع الهوية المغربية. وإلى جانب ذلك، يبقى حضور 
+          الأسواق التقليدية مثل سوق مراكش وفاس شاهدًا حيًا على استمرار روح التجارة والحرف اليدوية منذ مئات السنين.
+        </p>
+    </div>
+      </div>
+    </section>
+<section id="comments">
+  <div class="comments-container">
+      <h2>التعليقات</h2>
+      <div class="comment-list">
+<form id="comment-form">
+  <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+  </div>
+  <div class="form-group">
+      <label for="comment">Comments:</label>
+      <textarea id="comment" name="comment" rows="5" required></textarea>
+  </div>
+  <button type="submit">Send</button>
+  <p id="error-message" class="error-message"></p>
+</form>
+
+      </div>
+  </div>
+</section>
+  </main>
+  <footer class="page__footer">
+        <ul class="wrapper">
+        <a href="https://www.facebook.com/yassen.ahmedmmdouh">
+            <li class="icon facebook">
+              <span class="tooltip">Facebook</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                height="1.2em"
+                viewBox="0 0 320 512"
+              >
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                ></path>
+              </svg>
+            </li>
+        </a>
+        <a href="https://www.tiktok.com/@yassenahmed6290?_t=ZS-906u5IIw6Er&_r=1">
+           <li class="icon twitter">
+            <span class="tooltip">TikTok</span>
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 48 48" 
+                fill="currentColor" 
+                height="1.8em">
+              <path d="M33.5 10.2c1.6 1.2 3.5 2 5.5 2.3v6c-2.1-.1-4.1-.7-6-1.6v12.7c0 6.6-5.4 12-12 12s-12-5.4-12-12c0-6.1 4.6-11.2 10.6-11.9v6.1c-2.5.6-4.4 2.8-4.4 5.5 0 3.1 2.5 5.6 5.6 5.6 3.1 0 5.6-2.5 5.6-5.6V6h7.1c.2 1.6.9 3.1 2 4.2z"/>
+            </svg>
+          </li>
+        </a>            
+        <a href="https://www.instagram.com/yassen.a.mmdouh/">
+            <li class="icon instagram">
+                
+              <span class="tooltip">Instagram</span>
+              <svg
+                viewBox="0 0 16 16"
+                class="bi bi-instagram"
+                fill="currentColor"
+                height="1.2em"
+                xmlns="http://www.w3.org/2000/svg"
+                
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                  ></path>
+                  
+              </svg>
+            </li>
+        </a>
+          </ul>
+  </footer>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section"); 
+  const navbarList = document.getElementById("navbar__list");
+  sections.forEach(section => {
+    const sectionTitle = section.querySelector("h2").textContent;
+    const listItem = document.createElement("li");
+    const link = document.createElement("a");
+    link.classList.add("menu__link");
+    link.href = `#${section.id}`;
+    link.textContent = sectionTitle;
+    listItem.appendChild(link);
+    navbarList.appendChild(listItem);
+  });
+  const navLinks = document.querySelectorAll('.menu__link');
+  // التمرير السلس عند النقر على الرابط
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+
+      targetSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  });
+
+  function isSectionInViewport(section) {
+    const rect = section.getBoundingClientRect();
+    return rect.top >= 0 && rect.top <= window.innerHeight / 2;
+  }
+  // تحديث الفئة "active" حسب القسم الظاهر في الشاشة
+  function updateActiveNavLink() {
+    sections.forEach((section, index) => {
+      const link = navLinks[index];
+      if (isSectionInViewport(section)) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', updateActiveNavLink);
+  updateActiveNavLink(); // استدعاء أولي لتفعيل القسم الصحيح عند التحميل
+});
+// التعليقات
+const commentForm = document.getElementById('comment-form');
+const commentList = document.querySelector('.comment-list');
+commentForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+ 
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const commentText = document.getElementById('comment').value.trim();
+
+  if (!name || !email || !commentText) {
+    alert("Please fill in all fields.");
+    return;
+  }
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  const newComment = document.createElement('div');
+  newComment.classList.add('comment');
+  newComment.innerHTML = `
+    <h3>${name}</h3>
+    <p><strong>E-mail:</strong> ${email}</p>
+    <p>${commentText}</p>
+  `;
+  commentList.appendChild(newComment);
+  commentForm.reset();
+});
+const toggleBtn = document.querySelector(".menu-toggle");
+const navList = document.querySelector("#navbar__list");
+
+toggleBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  navList.classList.toggle("show");
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.closest("#navbar__list a")) {
+    navList.classList.remove("show");
+  }
+  if (!e.target.closest(".menu-toggle") && !e.target.closest("#navbar__list")) {
+    navList.classList.remove("show");
+  }
+});
+  </script>
+</body>
+</html>
