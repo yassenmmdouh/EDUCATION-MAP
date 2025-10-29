@@ -72,45 +72,13 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
 }
 .navbar__menu .menu__link:hover {
     background: #B22222;
     color: #fff;
     transition: ease 0.3s all;
 }
-
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #2b5c5f; 
-}
-
-@media (max-width: 768px) {
-  #navbar__list {
-    display: none;
-    flex-direction: column;
-    background: #000000;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    width: 200px;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  #navbar__list.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
 .page__header {
     background: #000000;
     position: fixed;
@@ -532,12 +500,11 @@ section:nth-of-type(even) .section-content {
 }
 </style>
 <body>
-  
   <header class="page__header">
-  <nav class="navbar__menu">
-  <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
-  <ul id="navbar__list"></ul>
-</nav>
+    <nav class="navbar__menu">
+      <ul id="navbar__list">
+      </ul>
+    </nav>
   </header>
   <main>
     <header class="main__hero">
@@ -828,22 +795,6 @@ commentForm.addEventListener('submit', function (event) {
   `;
   commentList.appendChild(newComment);
   commentForm.reset();
-});
-const toggleBtn = document.querySelector(".menu-toggle");
-const navList = document.querySelector("#navbar__list");
-
-toggleBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  navList.classList.toggle("show");
-});
-
-document.addEventListener("click", (e) => {
-  if (e.target.closest("#navbar__list a")) {
-    navList.classList.remove("show");
-  }
-  if (!e.target.closest(".menu-toggle") && !e.target.closest("#navbar__list")) {
-    navList.classList.remove("show");
-  }
 });
   </script>
 </body>
