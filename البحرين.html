@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>البحرين</title>
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<style>
+body {
+    background: rgb(219, 226, 232);
+    background: linear-gradient(
+        0deg,
+        rgba(219, 226, 232, 1) 0%,
+       #ffff
+    );
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #171a53;
+}
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3em;
+    margin: 2em 1rem;
+    color: #911a1a ; /*000000*/
+   text-align: center;
+}
+@media only screen and (min-width: 35em) {
+    h1 {
+        font-size: 7em;
+        margin: 1em 4rem 0;
+    }
+}
+h2 {
+    border-bottom: 3px solid #b181ff;
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 3em;
+    color: #911a1a;/*0000*/
+    text-align: right;
+}
+p {
+    line-height: 1.6em;
+    color: #000000;/**/
+    font-size: larger;
+    text-align: right;
+}
+
+main {
+    margin: 10vh 1em 10vh;
+}
+.main__hero {
+    min-height: 40vh;
+    padding-top: 3em;
+}
+section {
+    position: relative;
+    min-height: 80vh;
+}
+
+.navbar__menu ul {
+    padding-left: 0;
+    margin: 0;
+    text-align: right;
+}
+.navbar__menu li {
+    display: inline-block;
+}
+.navbar__menu .menu__link {
+    display: block;
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+}
+.navbar__menu .menu__link:hover {
+    background: #911a1a;/**/
+    color: #fff;
+    transition: ease 0.3s all;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2b5c5f; 
+}
+
+@media (max-width: 768px) {
+  #navbar__list {
+    display: none;
+    flex-direction: column;
+    background: #fdfcfc;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  #navbar__list.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.page__header {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+.page__footer {
+    background: #911a1a;/*00000*/
+    padding: 3em;
+    color: #fff;
+}
+.page__footer p {
+    color: #fff;
+}
+.landing__container {
+    padding: 1em;
+    text-align: left;
+}
+@media only screen and (min-width: 35em) {
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
+section:nth-of-type(even) .landing__container {
+    margin-right: 0;
+    margin-left: auto;
+    text-align: right;
+}
+section:nth-of-type(odd) .landing__container::before {
+    content: '';
+    background: rgba(189, 234, 9, 0.8);
+    background: linear-gradient(
+        0deg,
+        rgba(189, 234, 9, 0.5) 0%,
+        rgba(189, 234, 9, 1) 100%
+    );
+    position: absolute;
+    z-index: -5;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(even) .landing__container::before {
+    content: '';
+    background: rgb(101, 151, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(101, 151, 255, 0.5) 0%,
+        rgba(101, 151, 255, 1) 100%
+    );
+    position: absolute;
+    top: 3em;
+    right: 3em;
+    z-index: -5;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(even) .landing__container::after {
+    content: '';
+    background: rgb(177, 129, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(177, 129, 255, 0.5) 0%,
+        rgba(177, 129, 255, 1) 100%
+    );
+    position: absolute;
+    left: 3em;
+    bottom: -1em;
+    z-index: -5;
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(3n) .landing__container::after {
+    content: '';
+    background: rgb(32, 21, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(32, 21, 255, 0.5) 0%,
+        rgba(32, 21, 255, 1) 100%
+    );
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(3n + 1) .landing__container::after {
+    content: '';
+    background: rgb(10, 197, 161);
+    background: linear-gradient(
+        0deg,
+        rgba(10, 197, 161, 0.5) 0%,
+        rgba(10, 197, 161, 1) 100%
+    );
+    position: absolute;
+    right: 20vw;
+    bottom: -5em;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(5n) .landing__container::after {
+    content: '';
+    background: rgb(177, 129, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(177, 129, 255, 0.5) 0%,
+        rgba(177, 129, 255, 1) 100%
+    );
+    position: absolute;
+    right: 20vw;
+    bottom: -5em;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section.active {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+section.active .landing__container::before {
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+}
+section.active .landing__container::after {
+    opacity: 1;
+    animation: rotate 5s linear 0s infinite forwards reverse;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) translate(-1em) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    }
+}
+#comments {
+    padding: 3em 1em;
+    background-color: #f4f4f9;
+    margin-top: 2em;
+}
+.comments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.comment-list {
+    margin-top: 2em;
+    list-style: none;
+    padding: 0;
+}
+.comment-list .comment {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+}
+.comment-list .comment h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+.comment-list .comment p {
+    color: #555;
+}
+/*  النموذج */
+#comment-form {
+    margin-top: 3em;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+#comment-form .form-group {
+    margin-bottom: 1em;
+    text-align: left;
+}
+#comment-form label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+#comment-form input,
+#comment-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 0.3em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#comment-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#comment-form button:hover {
+    background-color: #45a049;
+}
+
+.error-message{
+    color: red;
+}.section-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+}
+
+section:nth-of-type(odd) .section-content {
+  flex-direction: row-reverse; /* الصورة على اليمين */
+}
+
+section:nth-of-type(even) .section-content {
+  flex-direction: row; /* الصورة على اليسار */
+}
+
+.section-image {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    z-index: 0;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: -1;
+    border-radius: 50%;
+    top: 100%;
+  }
+  .wrapper .icon:hover:after {
+    animation: bg-pos 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1 both;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .wrapper .icon:hover {
+    color: #fff;
+    overflow: unset;
+    transition: color 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: overflow-toggle 0.7s;
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+  
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  .wrapper .facebook::after {
+    background-color: #1877f2;
+  }
+  .wrapper .twitter::after {
+    background-color: #1da1f2;
+  }
+  .wrapper .instagram::after {
+    background-color: #e4405f;
+  }
+  
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+  }
+  
+  @keyframes bg-pos {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  @keyframes overflow-toggle {
+    0% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: visible;
+    }
+  }
+  .section-video {
+  width: 400px;
+  max-width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+</style>
+<body>
+  <header class="page__header">
+     <nav class="navbar__menu">
+  <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+  <ul id="navbar__list"></ul>
+</nav>
+  </header>
+  <main>
+    <header class="main__hero">
+      <h1>مملكه البحرين</h1>
+    </header>
+    <section id="section1" data-nav="Section 1" class="active">
+  <div class="section-content">
+    <img src="image/h-bahrain.jpg" alt="الحضارة المصرية" class="section-image">
+    <div class="landing__container">
+
+        <h2>الحضارة و التاريخ</h2>
+        <p>
+          تمتلك مملكة البحرين تاريخًا عريقًا يمتد لأكثر من 5000 عام، وكانت عبر العصور ملتقى للحضارات بسبب موقعها الجغرافي في الخليج العربي. فقد كانت موطنًا لـ حضارة دلمون القديمة التي ازدهرت كمركز تجاري بارز، حيث ربطت بين حضارات وادي الرافدين في العراق القديم وحضارة وادي السند في شبه القارة الهندية. اشتهرت دلمون بأساطيرها التي ورد ذكرها في النصوص المسمارية، حيث وُصفت بأنها "أرض الخلود" في ملحمة جلجامش.
+
+كما تميزت البحرين قديمًا بتجارتها في اللؤلؤ الطبيعي الذي شكّل مصدرًا رئيسيًا لثروتها وسمعتها العالمية لقرون طويلة، إلى جانب دورها كمحطة عبور للتجار والمسافرين. ولا تزال آثار حضارة دلمون، مثل تلال الدفن ومعابد باربار، شاهدة على عظمة هذا التاريخ القديم.
+</p>
+
+        <p>
+          كانت البحرين تُعرف في العصور القديمة باسم "دلمون"، وقد ارتبطت بأساطير الشرق القديم، حيث وُصفت بأنها الأرض المقدسة و"أرض الخلود" في ملحمة جلجامش السومرية. وتميزت دلمون بمكانتها كمركز تجاري استراتيجي يربط بين حضارات وادي الرافدين ووادي السند، مما جعلها محطة مهمة لتبادل البضائع والثقافات.
+
+على مر العصور، شهدت البحرين تعاقب العديد من الحضارات، فخضعت أحيانًا لسيطرة الآشوريين والبابليين، كما وقعت تحت نفوذ الإمبراطورية الفارسية في مراحل مختلفة. تركت هذه الحضارات بصماتها في الجزيرة من خلال التجارة واللغة والدين.
+
+وفي القرن السابع الميلادي، دخلت البحرين عهدًا جديدًا مع الفتح الإسلامي على يد العلاء بن الحضرمي، لتصبح جزءًا من الدولة الإسلامية. ومنذ ذلك الحين، لعبت البحرين دورًا مهمًا في نشر الإسلام بمنطقة الخليج، وبرزت كمركز علمي وثقافي وتجاري عبر القرون.
+</p>
+          <p>
+            شهدت البحرين خلال تاريخها الحديث صراعات بين القوى الإقليمية والدولية بسبب موقعها الاستراتيجي في الخليج. ففي القرن السادس عشر خضعت لسيطرة البرتغاليين الذين سعوا للسيطرة على طرق التجارة البحرية في الخليج العربي. وبعد تراجع نفوذهم، وقعت الجزيرة تحت حكم الفرس لفترات متقطعة.
+
+وفي عام 1783، تمكنت أسرة آل خليفة من بسط نفوذها على البحرين، لتبدأ مرحلة جديدة من الاستقرار السياسي تحت حكمهم المستمر حتى اليوم. ومع تزايد التنافس الدولي في المنطقة، أصبحت البحرين في عام 1861 محمية بريطانية بموجب معاهدة، وهو ما جعلها تحت النفوذ البريطاني حتى إعلان استقلالها رسميًا عام 1971.
+
+وفي عام 2002، أعلن الشيخ حمد بن عيسى آل خليفة تحويل البحرين من إمارة إلى مملكة دستورية، مما شكّل محطة بارزة في تاريخها السياسي الحديث، ورسّخ مكانتها كدولة ذات سيادة كاملة في الخليج العربي.
+</p>
+    </div>      
+</div>
+    </section>
+    <section id="section2" data-nav="Section 2" class="active">
+  <div class="section-content">
+    <img src="image/m-bahrain.jpg" alt="الموقع الجغرافي" class="section-image">
+    <div class="landing__container">
+
+        <h2>موقع الجغرافي </h2>
+        <p>
+ تقع مملكة البحرين في قلب الخليج العربي على الجهة الشرقية من شبه الجزيرة العربية، وتمتاز بموقع استراتيجي جعلها عبر التاريخ محطة للتجارة والملاحة البحرية. وهي عبارة عن أرخبيل يتكون من نحو 33 جزيرة طبيعية، بالإضافة إلى عدد متزايد من الجزر الصناعية التي أُنشئت في العقود الأخيرة للتوسع العمراني والاقتصادي، مثل جزر أمواج وديار المحرق.
+
+تُعد الجزيرة الكبرى "جزيرة البحرين" أكبر هذه الجزر من حيث المساحة والسكان، وتضم العاصمة المنامة. ويربط البحرين بالعالم الخارجي جسر الملك فهد الذي افتُتح عام 1986، ليوفر اتصالًا بريًا مباشرًا مع المملكة العربية السعودية، كما يُخطط لإنشاء جسر الملك حمد الذي سيعزز هذا الترابط.
+
+</p>
+
+        <p>
+تتمتع مملكة البحرين بموقع استراتيجي في قلب الخليج العربي، جعل منها عبر العصور مركزًا اقتصاديًا وتجاريًا مهمًا، سواء في الملاحة البحرية قديمًا أو في قطاع المال والأعمال حديثًا. ويربطها بالعالم الخارجي جسر الملك فهد الذي افتُتح عام 1986 ويبلغ طوله نحو 25 كيلومترًا، مما وفر لها اتصالًا بريًا مباشرًا مع المملكة العربية السعودية. كما يجري التخطيط لإنشاء جسر الملك حمد الذي سيصل البحرين بقطر، الأمر الذي سيعزز مكانتها كمحور إقليمي للنقل والتجارة.
+
+تُعد البحرين من أصغر الدول العربية من حيث المساحة، إذ تبلغ مساحتها حوالي 778 كيلومترًا مربعًا فقط، وهي بذلك عبارة عن أرخبيل صغير يتألف من مجموعة جزر يتصدرها جزيرة البحرين الكبرى حيث تقع العاصمة المنامة.
+
+أما مناخها، فيتسم بكونه صحراويًا جافًا؛ حيث تسود درجات حرارة مرتفعة صيفًا مع نسبة رطوبة عالية، بينما يكون الطقس أكثر اعتدالًا في فصل الشتاء. الأمطار قليلة ومتقطعة، وتركز غالبًا في فصلي الشتاء والربيع، وهو ما جعل مصادر المياه الطبيعية محدودة في البلاد.
+
+</p>
+    </div>
+      </div>
+    </section>
+    <section id="section3" data-nav="Section 3" class="active">
+  <div class="section-content">
+    <img src="image/s-bahrain.jpg" alt="الوضع الاقتصادي والسياسي" class="section-image">
+    <div class="landing__container">
+        <h2>الوضع الاقتصادي و السياسي</h2>
+        <p>
+          تُعد البحرين واحدة من أكثر الاقتصادات تطورًا في منطقة الخليج العربي، حيث كانت أول دولة خليجية تكتشف النفط في عام 1932، ما جعلها تدخل مبكرًا مرحلة التحديث والتنمية الاقتصادية مقارنة بجيرانها. لعب النفط دورًا محوريًا في نهضة البحرين خلال القرن العشرين، إذ وفر موارد مهمة لبناء البنية التحتية وتطوير قطاعات التعليم والصحة.
+
+لكن إدراك البحرين لمحدودية احتياطاتها النفطية دفعها إلى تنويع اقتصادها بشكل مبكر، فركزت على مجالات بديلة مثل القطاع المالي والمصرفي الذي جعل المنامة مركزًا ماليًا إقليميًا، إضافة إلى الصناعة الخفيفة، والألومنيوم، والخدمات اللوجستية، والسياحة، خصوصًا سياحة المعارض والفعاليات الرياضية والثقافية.
+
+هذا التوجه جعل الاقتصاد البحريني أكثر مرونة في مواجهة تقلبات أسعار النفط، ورسّخ مكانة البحرين كإحدى الدول الرائدة في الإصلاح الاقتصادي والتنوع في منطقة الخليج.      </p>
+
+        <p>
+          أصبحت مملكة البحرين في العقود الأخيرة مركزًا ماليًا إقليميًا مهمًا في الشرق الأوسط، حيث تحتضن العاصمة المنامة عددًا كبيرًا من المؤسسات المالية والمصرفية الدولية، مما جعلها بيئة جاذبة للاستثمار والأعمال. كما اشتهرت البحرين بصناعة الألمنيوم، إذ تُعد شركة ألبا (ألمنيوم البحرين) واحدة من أكبر مصاهر الألمنيوم في العالم، وتشكّل ركيزة أساسية في الاقتصاد الوطني إلى جانب قطاع الخدمات المالية.
+
+على الصعيد السياسي، تُعد البحرين مملكة دستورية يرأسها الملك حمد بن عيسى آل خليفة. ويقوم نظامها التشريعي على مجلسين: مجلس النواب المنتخب من الشعب، ومجلس الشورى الذي يُعيّنه الملك، ما يتيح مزيجًا بين المشاركة الشعبية والخبرة المعينة. وقد شهدت البحرين في عام 2002 محطة مفصلية بإقرار دستور جديد أسس لتحولات ديمقراطية، أعقبها إجراء انتخابات برلمانية عززت المشاركة السياسية في الحياة العامة.
+          </p>
+    </div>    
+</div>
+    </section>
+<section id="section4" data-nav="Section 4" class="active">
+  <div class="section-content">
+    <img src="image/a-bahrain.jpg" alt="المواقع الأثرية في مصر" class="section-image">
+    <div class="landing__container">
+        <h2>المواقع الاثرية</h2>
+        <p>
+          تتميز مملكة البحرين بوجود عدد من المعالم التاريخية والأثرية الفريدة التي تعكس حضارتها الممتدة عبر آلاف السنين. ومن أبرز هذه المواقع:
+
+قلعة البحرين: تُعد من أهم المواقع الأثرية في المنطقة، وقد أُدرجت على قائمة اليونسكو للتراث العالمي. تكشف القلعة عن طبقات حضارية متعددة تعود إلى حضارة دلمون التي ازدهرت قبل أكثر من أربعة آلاف عام، وتُظهر أهميتها كمركز تجاري وسياسي قديم.
+
+شجرة الحياة: وهي شجرة غاف معمّرة قائمة وسط الصحراء منذ ما يزيد على 400 عام، ورغم الظروف البيئية القاسية، ما زالت صامدة، مما جعلها رمزًا للصمود وأحد أكثر المعالم الطبيعية غرابة وإلهامًا في البحرين.
+
+مسجد الخميس: يُعتبر من أقدم المساجد في الخليج العربي، حيث يعود تاريخ بنائه إلى القرن السابع الميلادي. ويُعرف بعماراته الإسلامية التقليدية ومئذنتيه المميزتين اللتين تضيفان طابعًا معماريًا فريدًا.
+
+متحف البحرين الوطني: وهو من أعرق المتاحف في المنطقة، حيث يضم مجموعات واسعة من القطع الأثرية التي تعكس تاريخ البحرين من حضارة دلمون مرورًا بالفترات الإسلامية وحتى العصر الحديث، ما يجعله نافذة شاملة على تراث المملكة.
+
+دير البحرين: موقع أثري فريد يحتوي على بقايا دير مسيحي قديم يعود إلى الحقبة السابقة للإسلام، وهو شاهد على التنوع الديني والثقافي الذي عرفته البحرين عبر تاريخها الطويل.
+</p>
+    </div>
+      </div>
+    </section>
+
+<section id="section5" data-nav="Section 5" class="active">
+  <div class="section-content">
+    <iframe class="section-video" 
+          src="https://www.youtube.com/embed/UN_rxz8laAo?si=JnF78s1d3-9LvDMj" 
+          title="فيديو"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+    </iframe>
+    <div class="landing__container">
+        <h2>التراث</h2>
+        <p>
+        1. التراث التاريخي والثقافي
+تاريخ الإمارات قبل الاتحاد سنة 1971 مليان بحياة البدو في الصحراء والصيادين والغواصين على السواحل.
+
+من أبرز المواقع التاريخية:
+
+قلعة الفهيدي في دبي (1787م) واللي بقت دلوقتي "متحف دبي"، بتعرض فيه أدوات وصور عن الحياة القديمة.
+
+قلعة الجاهلي في العين (1891م)، رمز للدفاع والإدارة.
+
+موقع هيلي الأثري في العين، فيه قبور دائرية من العصر البرونزي (3000 قبل الميلاد).
+
+العمارة التراثية:
+
+بيوت البارجيل (ملاقف الهواء) اللي بتدخل الهواء وتبرد البيوت بشكل طبيعي.
+
+البيوت المبنية من الحجر المرجاني، الطين، وسعف النخيل.
+
+الفنون والشعر:
+
+الشعر النبطي أداة للتعبير عن الفخر، الغزل، والمدح.
+
+الفنون الشعبية زي العرضة بالسيوف واليولة مرتبطة بالمناسبات الوطنية والأعراس.</p>
+        <p>
+         2. التراث الشعبي والبحري والبدوي
+البحر:
+
+كان مصدر رزق أساسي لأهل الساحل. الغوص لاستخراج اللؤلؤ مهنة شاقة لكنها وفرت تجارة واسعة.
+
+الأساطيل الخشبية (الدهو) كانت وسيلة للتجارة مع الهند وشرق أفريقيا، ينقلوا التوابل، الأقمشة، والتمور.
+
+الصحراء:
+
+حياة البدو اعتمدت على الإبل والخيام (بيت الشعر).
+
+سباقات الهجن من أهم الرياضات التراثية، وكمان الفروسية.
+
+الصقور لها مكانة خاصة، ورياضة الصيد بالصقور بقت موروث عالمي مسجل في اليونسكو.
+
+العادات الاجتماعية:
+
+القهوة العربية بالهيل والزعفران، مع التمر، أساس الضيافة.
+
+الأعياد والمناسبات القومية بيحتفلوا فيها بالرقصات الشعبية والأهازيج.
+
+الأكلات الشعبية:
+
+الهريس (قمح مطحون مع اللحم).
+
+الثريد (خبز مع مرق اللحم والخضار).
+
+المجبوس (رز متبل بالبهارات واللحم أو السمك).
+
+اللقيمات (حلوى مقلية بالعسل أو الدبس).
+
+المهرجانات:
+
+مهرجان الشيخ زايد التراثي في أبوظبي.
+
+مهرجانات الصيد بالصقور وسباقات الهجن.
+
+فعاليات "أيام الشارقة التراثية" اللي بتعرض حرف يدوية، موسيقى، وأزياء. </p>
+    </div>
+      </div>
+    </section>
+
+    <section id="comments">
+  <div class="comments-container">
+      <h2>التعليقات</h2>
+      <div class="comment-list">
+<form id="comment-form">
+  <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+  </div>
+  <div class="form-group">
+      <label for="comment">Comments:</label>
+      <textarea id="comment" name="comment" rows="5" required></textarea>
+  </div>
+  <button type="submit">Send</button>
+  <p id="error-message" class="error-message"></p>
+</form>
+
+      </div>
+  </div>
+</section>
+  </main>
+  <footer class="page__footer">
+        <ul class="wrapper">
+        <a href="https://www.facebook.com/yassen.ahmedmmdouh">
+            <li class="icon facebook">
+              <span class="tooltip">Facebook</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                height="1.2em"
+                viewBox="0 0 320 512"
+              >
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                ></path>
+              </svg>
+            </li>
+        </a>
+        <a href="https://www.tiktok.com/@yassenahmed6290?_t=ZS-906u5IIw6Er&_r=1">
+          <li class="icon twitter">
+            <span class="tooltip">TikTok</span>
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                 viewBox="0 0 48 48" 
+                 fill="currentColor" 
+                 height="1.8em">
+              <path d="M33.5 10.2c1.6 1.2 3.5 2 5.5 2.3v6c-2.1-.1-4.1-.7-6-1.6v12.7c0 6.6-5.4 12-12 12s-12-5.4-12-12c0-6.1 4.6-11.2 10.6-11.9v6.1c-2.5.6-4.4 2.8-4.4 5.5 0 3.1 2.5 5.6 5.6 5.6 3.1 0 5.6-2.5 5.6-5.6V6h7.1c.2 1.6.9 3.1 2 4.2z"/>
+            </svg>
+          </li>
+          
+        </a>            
+        <a href="https://www.instagram.com/yassen.a.mmdouh/">
+            <li class="icon instagram">
+                
+              <span class="tooltip">Instagram</span>
+              <svg
+                viewBox="0 0 16 16"
+                class="bi bi-instagram"
+                fill="currentColor"
+                height="1.2em"
+                xmlns="http://www.w3.org/2000/svg"
+                
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                  ></path>
+                  
+              </svg>
+            </li>
+        </a>
+          </ul>
+  </footer>
+    <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCHwcxjeIRM48SL2gL8CguHLP-s5vEqt8U",
+  authDomain: "hawia-37d40.firebaseapp.com",
+  projectId: "hawia-37d40",
+  storageBucket: "hawia-37d40.firebasestorage.app",
+  messagingSenderId: "569166288766",
+  appId: "1:569166288766:web:44e84b9fdcc514f843c52f"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  const sections = document.querySelectorAll("section");
+  const navbarList = document.getElementById("navbar__list");
+  sections.forEach(section => {
+    const h2 = section.querySelector("h2");
+    if (!h2) return;
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = `#${section.id}`;
+    a.textContent = h2.textContent;
+    a.classList.add("menu__link");
+    li.appendChild(a);
+    navbarList.appendChild(li);
+  });
+  const navLinks = document.querySelectorAll(".menu__link");
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      document.querySelector(link.getAttribute("href"))
+        .scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function updateActive() {
+    sections.forEach((sec, i) => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+        navLinks.forEach(l => l.classList.remove("active"));
+        navLinks[i]?.classList.add("active");
+      }
+    });
+  }
+  window.addEventListener("scroll", updateActive);
+  updateActive();
+
+  const toggleBtn = document.querySelector(".menu-toggle");
+
+  toggleBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    navbarList.classList.toggle("show");
+  });
+
+  document.addEventListener("click", e => {
+    if (!e.target.closest(".menu-toggle") && !e.target.closest("#navbar__list")) {
+      navbarList.classList.remove("show");
+    }
+  });
+
+  const commentForm = document.getElementById("comment-form");
+
+  commentForm.addEventListener("submit", async e => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const comment = document.getElementById("comment").value.trim();
+
+    if (!name || !email || !comment) {
+      alert("من فضلك املأ كل الحقول");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "comments"), {
+        name,
+        email,
+        comment,
+        page: "bahrain",
+        createdAt: new Date()
+      });
+
+      alert("تم إرسال تعليقك بنجاح ✅");
+      commentForm.reset();
+
+    } catch (err) {
+      alert("حدث خطأ، حاول مرة أخرى");
+      console.error(err);
+    }
+  });
+
+});
+</script>
+</body>
+</html>

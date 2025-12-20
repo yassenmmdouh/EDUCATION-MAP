@@ -1,0 +1,873 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>مصر</title>
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<style>
+body {
+    background: rgb(219, 226, 232);
+    background: linear-gradient(
+        0deg,
+        rgba(219, 226, 232, 1) 0%,
+       #ffff
+    );
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #171a53;
+}
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3em;
+    margin: 2em 1rem;
+    color: #c4a911 ;
+   text-align: right;
+}
+@media only screen and (min-width: 35em) {
+    h1 {
+        font-size: 7em;
+        margin: 1em 4rem 0;
+    }
+}
+h2 {
+    border-bottom: 3px solid #b181ff;
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 3em;
+    color: #c4a911;
+    text-align: right;
+}
+p {
+    line-height: 1.6em;
+    color: #000000;
+    font-size: larger;
+    text-align: right;
+}
+
+main {
+    margin: 10vh 1em 10vh;
+}
+.main__hero {
+    min-height: 40vh;
+    padding-top: 3em;
+}
+section {
+    position: relative;
+    min-height: 80vh;
+}
+
+.navbar__menu ul {
+    padding-left: 0;
+    margin: 0;
+    text-align: right;
+}
+.navbar__menu li {
+    display: inline-block;
+}
+.navbar__menu .menu__link {
+    display: block;
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+}
+.navbar__menu .menu__link:hover {
+    background: #c4a911;
+    color: #fff;
+    transition: ease 0.3s all;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2b5c5f; 
+}
+
+@media (max-width: 768px) {
+  #navbar__list {
+    display: none;
+    flex-direction: column;
+    background: #fdfcfc;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  #navbar__list.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.page__header {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+.page__footer {
+    background: #cca700;
+    padding: 3em;
+    color: #fff;
+}
+.page__footer p {
+    color: #fff;
+}
+.landing__container {
+    padding: 1em;
+    text-align: left;
+}
+@media only screen and (min-width: 35em) {
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
+section:nth-of-type(even) .landing__container {
+    margin-right: 0;
+    margin-left: auto;
+    text-align: right;
+}
+section:nth-of-type(odd) .landing__container::before {
+    content: '';
+    background: rgba(189, 234, 9, 0.8);
+    background: linear-gradient(
+        0deg,
+        rgba(189, 234, 9, 0.5) 0%,
+        rgba(189, 234, 9, 1) 100%
+    );
+    position: absolute;
+    z-index: -5;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(even) .landing__container::before {
+    content: '';
+    background: rgb(101, 151, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(101, 151, 255, 0.5) 0%,
+        rgba(101, 151, 255, 1) 100%
+    );
+    position: absolute;
+    top: 3em;
+    right: 3em;
+    z-index: -5;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(even) .landing__container::after {
+    content: '';
+    background: rgb(177, 129, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(177, 129, 255, 0.5) 0%,
+        rgba(177, 129, 255, 1) 100%
+    );
+    position: absolute;
+    left: 3em;
+    bottom: -1em;
+    z-index: -5;
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(3n) .landing__container::after {
+    content: '';
+    background: rgb(32, 21, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(32, 21, 255, 0.5) 0%,
+        rgba(32, 21, 255, 1) 100%
+    );
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(3n + 1) .landing__container::after {
+    content: '';
+    background: rgb(10, 197, 161);
+    background: linear-gradient(
+        0deg,
+        rgba(10, 197, 161, 0.5) 0%,
+        rgba(10, 197, 161, 1) 100%
+    );
+    position: absolute;
+    right: 20vw;
+    bottom: -5em;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(5n) .landing__container::after {
+    content: '';
+    background: rgb(177, 129, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(177, 129, 255, 0.5) 0%,
+        rgba(177, 129, 255, 1) 100%
+    );
+    position: absolute;
+    right: 20vw;
+    bottom: -5em;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section.active {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+section.active .landing__container::before {
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+}
+section.active .landing__container::after {
+    opacity: 1;
+    animation: rotate 5s linear 0s infinite forwards reverse;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) translate(-1em) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    }
+}
+#comments {
+    padding: 3em 1em;
+    background-color: #f4f4f9;
+    margin-top: 2em;
+}
+.comments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.comment-list {
+    margin-top: 2em;
+    list-style: none;
+    padding: 0;
+}
+.comment-list .comment {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+}
+.comment-list .comment h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+.comment-list .comment p {
+    color: #555;
+}
+/*  النموذج */
+#comment-form {
+    margin-top: 3em;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+#comment-form .form-group {
+    margin-bottom: 1em;
+    text-align: left;
+}
+#comment-form label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+#comment-form input,
+#comment-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 0.3em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#comment-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#comment-form button:hover {
+    background-color: #45a049;
+}
+
+.error-message{
+    color: red;
+}.section-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+}
+
+section:nth-of-type(odd) .section-content {
+  flex-direction: row-reverse; /* الصورة على اليمين */
+}
+
+section:nth-of-type(even) .section-content {
+  flex-direction: row; /* الصورة على اليسار */
+}
+
+.section-image {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    z-index: 0;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: -1;
+    border-radius: 50%;
+    top: 100%;
+  }
+  .wrapper .icon:hover:after {
+    animation: bg-pos 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1 both;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .wrapper .icon:hover {
+    color: #fff;
+    overflow: unset;
+    transition: color 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: overflow-toggle 0.7s;
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+  
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  .wrapper .facebook::after {
+    background-color: #1877f2;
+  }
+  .wrapper .twitter::after {
+    background-color: #1da1f2;
+  }
+  .wrapper .instagram::after {
+    background-color: #e4405f;
+  }
+  
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+  }
+  
+  @keyframes bg-pos {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  @keyframes overflow-toggle {
+    0% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: visible;
+    }
+  }
+    .section-video {
+  width: 400px;
+  max-width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+</style>
+<body>
+  <header class="page__header">
+  <nav class="navbar__menu">
+  <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+  <ul id="navbar__list"></ul>
+</nav>
+
+  </header>
+  <main>
+    <header class="main__hero">
+      <h1>جمهورية مصر العربية </h1>
+    </header>
+    <section id="section1" data-nav="Section 1" class="active">
+  <div class="section-content">
+    <img src="image/h-egypt.jpg" alt="الحضارة المصرية" class="section-image">
+    <div class="landing__container">
+
+        <h2>الحضارة و التاريخ</h2>
+        <p>حسب عدة كتابات متخصصة، يضم تاريخ مصر أربعة عصور أساسية،
+           وهي العصر الفرعوني ثم العصر اليوناني والعصر الروماني، ثم العصر الإسلامي.</p>
+
+        <p>مرت مصر عبر تاريخها بثلاث مراحل حضارية كبرى شكّلت هويتها الثقافية والسياسية. بدأت بالمرحلة الفرعونية، حيث نشأت واحدة من أعظم الحضارات القديمة بقيادة الفراعنة، وتميزت بالاستقرار السياسي والازدهار الزراعي وبناء المعابد والأهرامات وتطور الكتابة الهيروغليفية وكانت من اهم المراحل في تاريخ مصر حيث النها تكونت بها اهم حضارة من حيث انها كان بها توسع كبير وكانت تؤثر علي الحضارات المجوارة.
+           ثم دخلت مصر المرحلة اليونانية بعد غزو الإسكندر الأكبر عام 332 ق.م،
+           وحكمها البطالمة الذين مزجوا بين الثقافة اليونانية والمصرية وعرفت بعد ذلك بالحضارة الهيلينستية ،
+           وازدهرت فيها العلوم والفلسفة، وكانت مكتبة الإسكندرية أبرز رموزها كانت من اهم اماكن تجمع فلاسفة العالم القديمومركزلنشر الحضارة اليونانية
+           وبعد ذلك، أصبحت مصر ولاية رومانية منذ عام 30 ق.
+          م بعد هزيمة كليوباترا، 
+          وشهدت تلك الفترة استغلالًا اقتصاديًا واسعًا من قبل روما، وبدأ فيها انتشار المسيحية تدريجيًا
+          ، حتى انتهى الحكم الروماني بدخول العرب المسلمين إلى مصر عام 641 م 
+        </p>
+          <p>
+            بدأ الفتح الإسلامي لمصر
+             عام 641م بقيادة الصحابي الجليل عمرو بن العاص، في عهد الخليفة الراشد عمر بن الخطاب، وكان فتحًا سلميًا في أغلبه،
+             تميز بالعدل وحسن المعاملة، حيث ضمن المسلمون حرية العقيدة لأقباط مصر، وقللوا الضرائب، ورفعوا الظلم البيزنطي
+             الذي كان مفروضًا على المصريين. ومنذ ذلك الحين، أصبحت مصر مركزًا مهمًا في العالم الإسلامي، وبدأت فيها نهضة ثقافية
+             وعلمية ودينية، فازدهرت العلوم والفقه واللغة العربية، وخرج منها علماء كبار مثل الليث بن سعد.
+
+              مع مرور الزمن، ازدهرت مصر تحت حكم الدولة الفاطمية، التي أسست مدينة القاهرة
+               وجامع الأزهر الشريف، الذي أصبح منارة للعلم الإسلامي حتى اليوم. ثم جاء صلاح الدين الأيوبي الذي وحّد مصر والشام،
+               وبنى قلعة صلاح الدين، وقاد الأمة ضد الحملات الصليبية، مما عزز مكانة مصر كقلب للعالم الإسلامي.
+
+              ثم تولى المماليك الحكم، ودافعوا بشجاعة عن الإسلام ضد التتار في معركة عين جالوت،
+               وضد الصليبيين، وحافظوا على استقرار مصر لقرون. وبعد دخول الدولة العثمانية مصر عام 1517م، حافظت
+               مصر على مكانتها الدينية والثقافية، وكان الأزهر في طليعة المؤسسات الدينية في العالم الإسلامي.
+
+              وفي بداية القرن التاسع عشر،
+               ظهر محمد علي باشا كقائد نهضة حقيقية، أعاد بناء الدولة المصرية على أسس حديثة، فأسس جيشًا قويًا،
+               ونهض بالزراعة والصناعة، وأرسل البعثات العلمية لأوروبا، وبنى المدارس والمصانع والموانئ. امتد تأثيره
+               إلى خارج مصر، حتى اعتُبرت دولته نواة الدولة المصرية الحديثة. واستمر أولاده وأحفاده في تطوير البلاد،
+               رغم تصاعد النفوذ الأوروبي لاحقًا، لتبقى مصر مركز إشعاع حضاري وثقافي في العالم العربي والإسلامي.
+            </p>
+            <p>
+              في حرب أكتوبر عام 1973، خاضت مصر معركة تاريخية جسدت قوة الإرادة وصلابة العزيمة في
+               مواجهة الاحتلال الإسرائيلي. استطاعت القوات المسلحة المصرية عبور قناة السويس وتحطيم خط بارليف الحصين
+              ، في خطوة عسكرية غير مسبوقة أبهرت العالم وأعادت الثقة للشعب المصري بعد نكسة 1967. هذا الانتصار لم
+               يكن مجرد إنجاز عسكري فحسب، بل كان بداية نهضة وطنية شاملة، حيث أعادت مصر بناء جيشها واقتصادها،
+               واستعادت مكانتها في العالم العربي والإفريقي والدولي. شكلت الحرب نقطة تحول محورية، أثبتت قدرة
+               المصريين على مواجهة التحديات وتجاوز المحن، لتبقى ذكرى أكتوبر رمزًا للفخر والكرامة والوحدة الوطنية.
+            </p>
+    </div>      
+</div>
+    </section>
+    <section id="section2" data-nav="Section 2" class="active">
+  <div class="section-content">
+    <img src="image/m-egypt.jpg" alt="الموقع الجغرافي" class="section-image">
+    <div class="landing__container">
+
+        <h2>موقع الجغرافي </h2>
+        <p>
+تتمتع مصر بموقع جغرافي فريد يجعلها جسراً يربط بين قارات العالم القديم، حيث تقع في الركن الشمالي الشرقي لأفريقيا مع امتداد إلى آسيا عبر شبه جزيرة سيناء. يحدها من الشمال البحر المتوسط، ومن الشرق البحر الأحمر، ومن الغرب ليبيا، ومن الجنوب السودان. هذا الموقع جعلها مركزاً للتجارة العالمية عبر العصور، خاصة مع وجود قناة السويس التي تربط الشرق بالغرب وتدر مليارات الدولارات سنوياً. كما أن تمركز غالبية السكان في وادي النيل والدلتا - الذي لا يتجاوز 5% من مساحة البلاد - حول النهر إلى شريان حياة، لكنه أيضاً خلق تحديات كبيرة مثل الاكتظاظ السكاني والضغط على الموارد.</p>
+
+        <p>
+لا يزال الموقع الجغرافي لمصر يلعب دوراً محورياً في سياساتها الداخلية والخارجية. فمن الناحية الاقتصادية، تتحكم البلاد في أحد أهم الممرات المائية العالمية عبر قناة السويس، مما يعزز مكانتها الدولية. لكن هذا الموقع يحمل أيضاً تحديات أمنية، حيث تشكل الحدود مع ليبيا والسودان بؤراً للتوتر، بينما تظل سيناء منطقة استراتيجية حساسة. كما أن الاعتماد الكبير على مياه النيل جعل مصر طرفاً في أزمة دبلوماسية مع إثيوبيا حول سد النهضة. وهكذا، بينما يمنح الموقع الجغرافي مصر نفوذاً إقليمياً ودولياً، فإنه يعرضها في الوقت نفسه لمخاطر جيوسياسية وبيئية تتطلب إدارة حكيمة لتحقيق التوازن بين الفرص والتحديات.
+
+</p>
+    </div>
+      </div>
+    </section>
+    <section id="section3" data-nav="Section 3" class="active">
+  <div class="section-content">
+    <img src="image/s-egypt.jpg" alt="الوضع الاقتصادي والسياسي" class="section-image">
+    <div class="landing__container">
+        <h2>الوضع الاقتصادي و السياسي</h2>
+        <p>
+          العصور القديمة حتى الفتح الإسلامي:
+          شهدت مصر
+           أولى نظم الحكم المركزية في التاريخ تحت حكم الفراعنة، حيث ارتبط الاقتصاد بالزراعة وبناء المشاريع العملاقة.
+           تحولت مع الفتح الإسلامي إلى مركز إشعاع حضاري، حيث ازدهرت التجارة والعلوم تحت حكم الفاطميين والأيوبيين. 
+          أصبحت القاهرة في العصر المملوكي عاصمة للتجارة العالمية، تربط الشرق بالغرب عبر شبكة تجارية واسعة.
+
+          من العثمانيين إلى العصر الحديث:
+          دخلت
+           مصر مرحلة من الركود تحت الحكم العثماني، قبل أن يشهد عصر محمد علي نهضة صناعية وعسكرية غير مسبوقة. لكن 
+          الاحتلال البريطاني حول الاقتصاد المصري إلى اقتصاد أحادي الجانب يعتمد على القطن. جاءت ثورة 1952 لتؤسس لمرحلة
+           جديدة من الاستقلال السياسي والاقتصادي تحت قيادة عبد الناصر، شهدت تأميمات كبرى وبناء السد العالي.</p>
+
+          <p>
+          مصر المعاصرة: بين الطموحات والتحديات
+          في العقد الأخير، شهدت مصر طفرة في المشاريع الكبرى
+           مثل العاصمة الإدارية الجديدة وتوسيع قناة السويس، لكنها تواجه تحديات اقتصادية جسيمة تتمثل في ارتفاع
+           الدين الخارجي ومعدلات التضخم. سياسياً، تشهد البلاد مرحلة من الاستقرار الأمني تحت قيادة الرئيس السيسي،
+           لكنها تتعرض لانتقادات دولية فيما يخص الحريات العامة وحقوق الإنسان. تقف مصر اليوم على مفترق طرق،
+           حيث تسعى لتحقيق التوازن بين التنمية الاقتصادية والاستقرار السياسي في بيئة إقليمية ودولية متقلبة.
+
+        </p>
+    </div>    
+</div>
+    </section>
+<section id="section4" data-nav="Section 4" class="active">
+  <div class="section-content">
+    <img src="image/a-egypt.jpg" alt="المواقع الأثرية في مصر" class="section-image">
+    <div class="landing__container">
+        <h2>المواقع الاثرية</h2>
+           <p>
+                  أهرامات الجيزة وعجائب العمارة الفرعونية
+            تعتبر أهرامات الجيزة
+             الثلاثة - خوفو وخفرع ومنقرع - أيقونة مصر الخالدة، بناها الفراعنة قبل 4500 عام كقبور ملكية ضخمة.
+            يعد
+             هرم خوفو الأكبر والأعجوبة الوحيدة الباقية من عجائب الدنيا السبع القديمة. بجوارها يقبع تمثال أبو الهول
+            الغامض
+             المنحوت من الحجر الجيري، الذي يمزج بين قوة الأسد وحكمة الإنسان. تكشف هذه المجموعة المعمارية الفريدة
+            عن التقدم العلمي والمهارات الهندسية التي وصل إليها المصريون القدماء في علم الفلك والرياضيات.
+
+            2. معابد الأقصر وأسرار الحضارة المصرية
+            تمثل
+             معابد الكرنك والأقصر في محافظة الأقصر متحفاً مفتوحاً يختزل مجد الحضارة الفرعونية. يعد مجمع معابد الكرنك
+             أكبر موقع ديني قديم في العالم، حيث استغرق بناؤه أكثر من 2000 عام. أما معبد الأقصر فيربطه بالكرنك طريق 
+            الكباش الشهير، ويمتاز بفناء رمسيس الثاني الضخم. وتكتمل الصورة الأثرية في المنطقة بوادي الملوك الذي يضم 
+            مقابر الفراعنة مثل توت عنخ آمون، مع نقوشه الجدارية المبهرة التي تحكي أسرار الحياة الآخرة عند القدماء.
+
+            </p>
+    </div>
+      </div>
+    </section>
+    
+<section id="section5" data-nav="Section 5" class="active">
+  <div class="section-content">
+     <iframe class="section-video" 
+          src="https://www.youtube.com/embed/bPz3AdDxXjU?si=tkZoYKm7Qg-qCB-k" 
+          title="فيديو"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+    </iframe>
+    <div class="landing__container">
+        <h2>التراث</h2>
+        <p>
+        من أبرز العادات القديمة في مصر عادة الاحتفال بالنيل، حيث كان المصريون القدماء يقيمون
+         مهرجانات سنوية مرتبطة بفيضان النهر وتقديم القرابين له باعتباره مصدر الحياة. كما اشتهرت عادة صناعة 
+        الخبز والفطير المشلتت، التي تعود أصولها إلى العصور الفرعونية، وظلت رمزًا للكرم والضيافة. ومن العادات 
+        التي لها جذور ضاربة في القدم أيضًا عادة النقوش والزخارف على الجدران والأواني، والتي استُخدمت لنقل الحكايات
+         وتوثيق الحياة اليومية، وما زالت هذه الروح الفنية متوارثة في أشكال الحرف اليدوية والفنون الشعبية.
+        </p>
+        <p>
+
+          ما زالت عادة الاحتفال بشم النسيم قائمة
+           منذ آلاف السنين، حيث يخرج المصريون في الربيع لتناول الفسيخ والبصل والبيض الملون. كما تستمر تقاليد 
+          العزف على الربابة والسيرة الهلالية في الصعيد، والموالد الشعبية المرتبطة بالأولياء الصالحين، وهي عادات
+           متجذرة تعكس استمرارية التراث المصري عبر الزمن. وإلى جانب ذلك، يظل اجتماع العائلات حول مائدة رمضان أحد 
+          أبرز مظاهر التراث الاجتماعي، حيث يجمع بين الروح الدينية والتقاليد الأسرية في طابع مميز لا يزال حاضرًا بقوة.
+        </p>
+    </div>
+      </div>
+    </section>
+<section id="comments">
+  <div class="comments-container">
+      <h2>التعليقات</h2>
+      <div class="comment-list">
+<form id="comment-form">
+  <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+  </div>
+  <div class="form-group">
+      <label for="comment">Comments:</label>
+      <textarea id="comment" name="comment" rows="5" required></textarea>
+  </div>
+  <button type="submit">Send</button>
+  <p id="error-message" class="error-message"></p>
+</form>
+
+      </div>
+  </div>
+</section>
+  </main>
+  <footer class="page__footer">
+        <ul class="wrapper">
+        <a href="https://www.facebook.com/yassen.ahmedmmdouh">
+            <li class="icon facebook">
+              <span class="tooltip">Facebook</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                height="1.2em"
+                viewBox="0 0 320 512"
+              >
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                ></path>
+              </svg>
+            </li>
+        </a>
+        <a href="https://www.tiktok.com/@yassenahmed6290?_t=ZS-906u5IIw6Er&_r=1">
+           <li class="icon twitter">
+            <span class="tooltip">TikTok</span>
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 48 48" 
+                fill="currentColor" 
+                height="1.8em">
+              <path d="M33.5 10.2c1.6 1.2 3.5 2 5.5 2.3v6c-2.1-.1-4.1-.7-6-1.6v12.7c0 6.6-5.4 12-12 12s-12-5.4-12-12c0-6.1 4.6-11.2 10.6-11.9v6.1c-2.5.6-4.4 2.8-4.4 5.5 0 3.1 2.5 5.6 5.6 5.6 3.1 0 5.6-2.5 5.6-5.6V6h7.1c.2 1.6.9 3.1 2 4.2z"/>
+            </svg>
+          </li>
+        </a>            
+        <a href="https://www.instagram.com/yassen.a.mmdouh/">
+            <li class="icon instagram">
+                
+              <span class="tooltip">Instagram</span>
+              <svg
+                viewBox="0 0 16 16"
+                class="bi bi-instagram"
+                fill="currentColor"
+                height="1.2em"
+                xmlns="http://www.w3.org/2000/svg"
+                
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                  ></path>
+                  
+              </svg>
+            </li>
+        </a>
+          </ul>
+  </footer>
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCHwcxjeIRM48SL2gL8CguHLP-s5vEqt8U",
+  authDomain: "hawia-37d40.firebaseapp.com",
+  projectId: "hawia-37d40",
+  storageBucket: "hawia-37d40.firebasestorage.app",
+  messagingSenderId: "569166288766",
+  appId: "1:569166288766:web:44e84b9fdcc514f843c52f"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  const sections = document.querySelectorAll("section");
+  const navbarList = document.getElementById("navbar__list");
+  sections.forEach(section => {
+    const h2 = section.querySelector("h2");
+    if (!h2) return;
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = `#${section.id}`;
+    a.textContent = h2.textContent;
+    a.classList.add("menu__link");
+    li.appendChild(a);
+    navbarList.appendChild(li);
+  });
+  const navLinks = document.querySelectorAll(".menu__link");
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      document.querySelector(link.getAttribute("href"))
+        .scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function updateActive() {
+    sections.forEach((sec, i) => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+        navLinks.forEach(l => l.classList.remove("active"));
+        navLinks[i]?.classList.add("active");
+      }
+    });
+  }
+  window.addEventListener("scroll", updateActive);
+  updateActive();
+
+  const toggleBtn = document.querySelector(".menu-toggle");
+
+  toggleBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    navbarList.classList.toggle("show");
+  });
+
+  document.addEventListener("click", e => {
+    if (!e.target.closest(".menu-toggle") && !e.target.closest("#navbar__list")) {
+      navbarList.classList.remove("show");
+    }
+  });
+
+  const commentForm = document.getElementById("comment-form");
+
+  commentForm.addEventListener("submit", async e => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const comment = document.getElementById("comment").value.trim();
+
+    if (!name || !email || !comment) {
+      alert("من فضلك املأ كل الحقول");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "comments"), {
+        name,
+        email,
+        comment,
+        page: "Egypt",
+        createdAt: new Date()
+      });
+
+      alert("تم إرسال تعليقك بنجاح ✅");
+      commentForm.reset();
+
+    } catch (err) {
+      alert("حدث خطأ، حاول مرة أخرى");
+      console.error(err);
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
